@@ -1,13 +1,15 @@
 import TextInput from "../../Components/Inputs/TextInput";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom"; 
  import { ToastContainer, toast } from "react-toastify";
  import "react-toastify/dist/ReactToastify.css";
  import loginData from "../../Data/LoginCredentials"
 
-export default function Login() {
 
-    const notify = () => toast("Username and Password is Correct!");
+export default function Login() {
+  const navigate = useNavigate(); 
+
+
     const errorNotify = () => toast.error("Invalid username or password!");
   const [formData, setFormData] = useState({
     userName: "",
@@ -24,7 +26,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Check if the entered username and password match any object in the loginData array
+
     const matchingUser = loginData.find(
       (user) =>
         user.username === formData.userName &&
@@ -32,14 +34,19 @@ export default function Login() {
     );
 
     if (matchingUser) {
-      // Successful login
-      notify();
-      console.log("User Role:", matchingUser.role);
-      // Additional actions, e.g., set user role, redirect, etc.
+
+      if (matchingUser.role=="admin"){
+
+        navigate(`/AdminDashboard?userId=${matchingUser.userId}`);
+      }else if(matchingUser.role=="manager"){
+    navigate(`/ManagerDashboard?userId=${matchingUser.userId}`);
+      }else if(matchingUser.role=="user"){
+    navigate(`/UserDashboard?userId=${matchingUser.userId}`);
+      }
     } else {
       // Failed login
       errorNotify();
-      console.log("Invalid username or password");
+
     }
   };
   return (
