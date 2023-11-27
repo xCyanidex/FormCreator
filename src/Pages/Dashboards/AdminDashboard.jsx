@@ -8,6 +8,9 @@ export default function AdminDashboard() {
     <>
       <div className="flex flex-col min-h-screen m-auto">
         <AdminHeader />
+        <div className="container max-w-lg m-auto py-3 text-center">
+          <h2 className="text-2xl">Welcome Admin</h2>
+        </div>
         <div className="container p-20 space-x-4 text-center">
           <StatsTabel title="Forms" count="40" desc="Total Forms Created" />
           <StatsTabel title="Forms" count="40" desc="Total Forms Created" />
