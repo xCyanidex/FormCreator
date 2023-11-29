@@ -1,8 +1,28 @@
-# React + Vite
+# FormCreator Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a web application for creating dynamic forms. Users can easily design and deploy forms for various purposes.
+
+## Features
+
+- **Intuitive Form Builder**: Drag-and-drop interface for easy form creation.
+- **Customizable Fields**: Choose from a variety of form fields and customize their properties.
+- **Real-time Preview**: See how your form looks as you design it.
+- **Data Export**: Download form submissions in multiple formats.
+- **Responsive Design**: Forms are optimized for various devices.
+
+## Tech Stack
+
+- Frontend: ReactJS
+- Backend: Node.js
+- Database: MongoDB
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/xCyanidex/FormCreator.git
